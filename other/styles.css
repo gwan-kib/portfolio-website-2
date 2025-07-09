@@ -1,0 +1,154 @@
+body {
+    background-color: #171717;
+}
+
+/*NAVBAR DEFAULT SETTINGs*/
+
+/* the whole navbar */
+#navbar { 
+    width: 100%;                 
+    height: 5.5rem;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    background-color: #111111; 
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: space-around;
+
+    transition: height 0.2s ease, opacity 0.2s ease, visibility 0.2s ease;
+}
+
+#navbar-leftside, #navbar-rightside {
+    display: flex;
+    align-items: center;
+
+    gap: 5rem;
+}
+
+#navbar-leftside {
+    margin-left: 1rem;
+}
+
+#navbar-rightside {
+    margin-right: 1rem;
+}
+
+/* default settings for all the elements in the navbar */
+.navbar-element,
+.art-menu-item {
+    background: none;
+    color: #fec345;
+    font-family: 'Bungee';
+    font-size: 1.5rem;
+    
+    border: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 0rem;
+    margin-left: 1.5rem;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+#navbar #name {
+    font-size: 1.35rem;
+
+    margin: 0;
+    margin-left: 1rem;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: .2rem;
+
+    font-family: 'Rubik Mono One', sans-serif;
+    font-weight: 700;
+    
+    height: 100%;
+    line-height:normal;
+}
+
+#navbar-logo {
+    width: 1.7rem;
+    height: auto;
+}
+
+/* for the links in the navbar */
+#navbar a { 
+    text-decoration: none;
+    outline: none;
+
+    display: flex;
+
+    align-items: center;
+}
+
+#navbar .material-symbols-rounded {
+    margin-right: .3rem;
+}
+
+/*----------------------------------------------------------------------------------------------------------------*/
+
+/* NAVBAR FOCUS & CLICKING */
+
+.navbar-label:hover,
+.navbar-label:hover .material-symbols-rounded,
+.art-menu-item:hover,
+#navbar-logo:hover,
+#navbar-toggle:hover {
+    cursor: pointer;
+
+    color: #ffe1a0;
+    text-shadow: 0 0 1rem #fec345; /* x-offset y-offset blur-radius color */;
+    transition: text-shadow .2s ease, font-variation-settings .2s ease;
+}
+
+.navbar-label:hover .material-symbols-rounded {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+}
+
+/*----------------------------------------------------------------------------------------------------------------*/
+
+/* GOOGLE SYMBOLS STYLING */
+
+@font-face { /* to use the font for symbols that has been downloaded with the project */
+    font-family: 'Material Symbols Rounded';
+    src: url('../fonts/MaterialSymbolsRounded[FILL\,GRAD\,opsz\,wght].woff2') format('woff2');
+}
+
+.material-symbols-rounded { 
+    user-select: none;
+    font-family: 'Material Symbols Rounded';
+    font-size: 1.7rem;
+    color: inherit;
+
+    font-variation-settings: 'FILL' 0, 'wght' 800, 'GRAD' 0, 'opsz' 48;
+
+    line-height: 1;
+    position: relative;
+}
+
+
+/*----------------------------------------------------------------------------------------------------------------*/
