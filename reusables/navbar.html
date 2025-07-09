@@ -1,36 +1,38 @@
-<div id="navbar">
+<div class="" id="navbar">
+
     <div id="navbar-leftside">
-        <div class="navbar-element" id="name">
-            <img id="navbar-logo" src="/reusables/websiteLogoGold.png" alt="logo" />
+        <div class="navbar-element">
             <div class="navbar-label">
-                <strong>Gwantana<br>Kiboigo</strong>
+                <img id="navbar-logo" src="/reusables/websiteLogoGold.png" alt="logo" />
+                <span class="label-text" id="name">Gwantana Kiboigo</span>
             </div>
         </div>
     </div>
-    <div id="navbar-rightside">
-        <a class="navbar-element" href="/webpages/index.html">
-            <div class="navbar-label">
-                <span class="material-symbols-rounded">home</span> Home
-            </div>
-        </a>
 
-        <a class="navbar-element" href="/webpages/resume-page.html">
-            <div class="navbar-label">
-                <span class="material-symbols-rounded">description</span> Resume
-            </div>
-        </a>
+    <div id="navbar-middle">
+        <div class="navbar-element">
+            <a class="navbar-label" href="/webpages/main-page.html">
+                <span class="material-symbols-rounded">home</span><span class="label-text">Home</span>
+            </a>
+        </div>
+
+        <div class="navbar-element">
+            <a class="navbar-label" href="/webpages/resume-page.html">
+                <span class="material-symbols-rounded">description</span><span class="label-text">Resume</span>
+            </a>
+        </div>
         
-        <a class="navbar-element" href="/webpages/projects-page.html">
-            <div class="navbar-label">
-                <span class="material-symbols-rounded">dashboard</span> Projects
-            </div>
-        </a>
+        <div class="navbar-element">
+            <a class="navbar-label" href="/webpages/projects-page.html">
+                <span class="material-symbols-rounded">dashboard</span><span class="label-text">Projects</span>
+            </a>
+        </div>
 
-        <button class="navbar-element"  id="art-dropdown" onclick="dropdownMenu()">
-            <div class="navbar-label">
-                <span class="material-symbols-rounded">stylus_pen</span> Art
-            </div>
-        </button>
+        <div class="navbar-element dropdown">
+            <button class="navbar-label" id="art-menu">
+                <span class="material-symbols-rounded">stylus_pen</span>
+                <span class="label-text">Art</span>
+            </button>
         
         <!--  GOTTA PUT THIS BACK IN AT SOME POINT, ART DROP DOWN MENU
         <div class="dropdown-menu" id="art-menu">
@@ -38,10 +40,13 @@
             <a class="dropdown-element art-menu-item" href="/webpages/art-commissions-page.html">Commissions</a>
         </div>
         -->
+        </div>
+    </div>
 
-        <a class="navbar-element" id="contact-me">
+    <div id="navbar-rightside">
+        <a class="navbar-element" >
             <div class="navbar-label">
-            Contact Me
+                <span class="label-text" id="contact-me">Contact Me</span>
             </div>
         </a>
     </div>

@@ -1,0 +1,177 @@
+/*NAVBAR DEFAULT SETTINGS*/
+
+/* the whole navbar */
+#navbar { 
+    width: 100%;                 
+    height: 5.5rem;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    background-color: #111111; 
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+    transition: height 0.3s ease;
+}
+
+#navbar-leftside {
+    position: absolute;
+    left: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    min-width: 0;
+    flex-shrink: 1;
+}
+
+#navbar-middle {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    width: 100%;
+    justify-content: center;
+}
+
+#navbar-rightside {
+    position: absolute;
+    left: 80rem; /* 85.375 - (leftside 'left') */
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* default settings for all the elements in the navbar */
+.navbar-element {
+    background: none;
+    background-color: transparent;
+    
+    width: fit-content; 
+    min-width: 0;
+}
+
+.navbar-label,
+button#art-menu,
+.art-menu-item {
+    background: none;
+    background-color: transparent;
+    
+    color: #fec345;
+    
+    border: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 0rem;
+    height: 100%;
+    line-height: normal;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    overflow: visible;
+
+    opacity: 1;
+    visibility: visible;
+}
+
+.label-text {
+    font-family: 'Rubik Mono One', sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+
+    opacity: 1;
+    visibility: visible;
+    max-width: 16rem;
+    white-space: nowrap;
+
+    transition: opacity 0.4s ease, visibility 0.4s ease, max-width 0.37s ease;
+}
+
+.label-text#name,
+.label-text#contact-me {
+    font-size: 2rem;
+    font-weight: 600;
+
+    margin: 0;
+    margin-left: 1rem;
+    white-space: nowrap;
+
+    transition: opacity 0.4s ease, visibility 0.4s ease, font-size 0.4s ease;
+}
+
+#navbar-logo {
+    width: 1.7rem;
+    height: auto;
+}
+
+/* for the links in the navbar */
+#navbar a,
+button#art-menu{ 
+    text-decoration: none;
+    outline: none;
+
+    display: flex;
+    gap: .7rem;
+    
+    align-items: center;
+}
+
+/*----------------------------------------------------------------------------------------------------------------*/
+
+/* NAVBAR FOCUS & CLICKING */
+
+#navbar-logo:hover,
+.navbar-element:hover,
+.navbar-label:hover,
+button#art-menu:hover {
+    cursor: pointer;
+
+    color: #ffe1a0;
+    text-shadow: 0 0 1rem #ffe1a0; /* x-offset y-offset blur-radius color */;
+    z-index: 2;
+
+    transition: color .2s ease, text-shadow .2s ease, font-variation-settings .2s ease;
+}
+
+.navbar-label:hover .material-symbols-rounded {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+}
+
+/*----------------------------------------------------------------------------------------------------------------*/
+
+/* NAVBAR SCROLL BEHAVIOUR */
+
+#navbar.shrink {
+  height: 3rem;
+}
+
+#navbar.shrink:hover {
+    height: 5.5rem;
+    opacity: 1;
+    visibility: visible;
+}
+
+#navbar.shrink .label-text {
+    opacity: 0;
+    visibility: hidden;
+    max-width: 0;
+}
+
+#navbar.shrink .label-text#name {
+    opacity: 1;
+    visibility: visible;
+    
+    font-size: 1.45rem;
+}
+
+/*----------------------------------------------------------------------------------------------------------------*/
+
