@@ -221,3 +221,7 @@ button#art-menu:hover {
     background-color: #202020;
     border-radius: 0.4rem;
 }
+
+.art-menu-item-text {
+    font-weight: 700;
+}
