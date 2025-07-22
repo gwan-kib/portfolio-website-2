@@ -1,12 +1,10 @@
 body {
-    background-color: #171717;
+    background-color: #222222;
     
     margin: 0;
     padding: 0;
-}
-
-html, body {
-    overflow-x: hidden; 
+    
+    font-family: 'Rubik Mono One', sans-serif;
 }
 
 /*----------------------------------------------------------------------------------------------------------------*/
@@ -24,7 +22,7 @@ html, body {
     font-size: 1.7rem;
     color: inherit;
 
-    font-variation-settings: 'FILL' 0, 'wght' 800, 'GRAD' 0, 'opsz' 48;
+    font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 48;
 
     line-height: 1;
     position: relative;
