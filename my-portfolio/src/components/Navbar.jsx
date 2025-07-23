@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
@@ -6,7 +7,7 @@ function Navbar() {
         <div id="navbar-leftside">
             <div className="navbar-element">
                 <div className="navbar-label">
-                    <img id="navbar-logo" src="/reusables/websiteLogoGold.png" alt="logo" />
+                    <img id="navbar-logo" src="/websiteLogoGold.png" alt="logo" />
                     <span className="label-text" id="name">Gwantana Kiboigo</span>
                 </div>
             </div>
@@ -14,24 +15,24 @@ function Navbar() {
 
         <div id="navbar-middle">
             <div className="navbar-element">
-                <a className="navbar-label" href="/webpages/main-page.html">
+                <Link className="navbar-label" to="/">
                     <span className="material-symbols-rounded">home</span>
                     <span className="label-text">Home</span>
-                </a>
+                </Link>
             </div>
 
             <div className="navbar-element">
-                <a className="navbar-label" href="/webpages/resume-page.html">
+                <Link className="navbar-label" to="/resume">
                     <span className="material-symbols-rounded">description</span>
                     <span className="label-text">Resume</span>
-                </a>
+                </Link>
             </div>
 
             <div className="navbar-element">
-                <a className="navbar-label" href="/webpages/projects-page.html">
+                <Link className="navbar-label" to="/projects">
                     <span className="material-symbols-rounded">dashboard</span>
                     <span className="label-text">Projects</span>
-                </a>
+                </Link>
             </div>
 
             <div className="navbar-element dropdown">
@@ -42,12 +43,12 @@ function Navbar() {
                 </button>
 
                 <div className="dropdown-menu" id="art-menu">
-                    <a className="dropdown-element art-menu-item" href="/webpages/art-personal-page.html">
+                    <Link className="dropdown-element art-menu-item" to="/art/personal">
                         <span className="art-menu-item-text">Personal</span>
-                    </a>
-                    <a className="dropdown-element art-menu-item" href="/webpages/art-commissions-page.html">
+                    </Link>
+                    <Link className="dropdown-element art-menu-item" to="/art/commissions">
                         <span className="art-menu-item-text">Commissions</span>
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>

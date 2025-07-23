@@ -5,8 +5,6 @@ import '../styles/navbar-styles.css';
 function ArtPersonalPage() {
   return (
     <div>
-      <div id="navbar-container"></div>
-
       <div className="filler-text">
         <p>Lorem ipsum dolor sit amet.</p>
         <p>Lorem ipsum dolor sit amet.</p>
