@@ -35,6 +35,15 @@ if (navbarContainer) {
             }
         });
 
+        // Prevents scrolling when mouse is over the navbar
+        navbar.addEventListener('mouseenter', () => {
+            document.body.style.overflow = 'hidden';
+        });
+
+        navbar.addEventListener('mouseleave', () => {
+            document.body.style.overflow = '';
+        });
+
         // Art dropdown menu toggle
         const artMenuButton = document.getElementById('art-menu-button');
         const artMenu = document.getElementById('art-menu');
