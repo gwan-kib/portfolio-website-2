@@ -136,12 +136,13 @@ button#art-menu{
 #navbar-logo:hover,
 .navbar-element:hover,
 .navbar-label:hover,
-button#art-menu:hover {
+button#art-menu:hover,
+.art-menu-item:hover {
     cursor: pointer;
 
     color: #ffd57c;
 
-    transition: color .2s ease, text-shadow .2s ease;
+    transition: color .2s ease;
 }
 
 .navbar-label:hover .material-symbols-rounded {
