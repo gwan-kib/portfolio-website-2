@@ -1,7 +1,8 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import NavbarBehavior from '../hooks/NavbarBehavior';
 
 function Navbar() {
+    NavbarBehavior();
   return (
     <div className="" id="navbar">
         <div id="navbar-leftside">
@@ -54,11 +55,11 @@ function Navbar() {
         </div>
 
         <div id="navbar-rightside">
-            <a className="navbar-element">
+            <span className="navbar-element">
                 <div className="navbar-label">
                     <span className="label-text" id="contact-me">Contact Me</span>
                 </div>
-            </a>
+            </span>
         </div>
     </div>
   );
