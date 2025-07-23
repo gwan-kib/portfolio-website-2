@@ -16,23 +16,7 @@ export default function NavbarBehavior() {
       }
     };
 
-    const handleNavbarEnter = () => {
-      if (navbar.classList.contains('shrink')) {
-        navbar.classList.remove('shrink');
-      }
-      document.body.style.overflow = 'hidden';
-    };
-
-    const handleNavbarLeave = () => {
-      document.body.style.overflow = '';
-      if (window.scrollY > 88 && !navbar.classList.contains('shrink')) {
-        navbar.classList.add('shrink');
-      }
-    };
-
     window.addEventListener('scroll', handleScroll);
-    navbar.addEventListener('mouseenter', handleNavbarEnter);
-    navbar.addEventListener('mouseleave', handleNavbarLeave);
 
     const cleanup = [];
 
@@ -73,9 +57,6 @@ export default function NavbarBehavior() {
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      navbar.removeEventListener('mouseenter', handleNavbarEnter);
-      navbar.removeEventListener('mouseleave', handleNavbarLeave);
-      document.body.style.overflow = '';
       cleanup.forEach(fn => fn());
     };
   }, []);
