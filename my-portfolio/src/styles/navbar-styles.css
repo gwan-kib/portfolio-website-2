@@ -5,6 +5,8 @@
     width: 90%;                 
     height: 5.5rem;
 
+    z-index: 100;
+
     position: fixed;
     top: 1rem;
     right: 0;
