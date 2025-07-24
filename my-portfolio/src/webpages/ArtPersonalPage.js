@@ -1,4 +1,10 @@
+import { useEffect } from 'react';
+
 function ArtPersonalPage() {
+  useEffect(() => {
+    document.title = "Gwantana Kiboigo | Personal Art";
+  }, []);
+
   return (
     <div>
       <div className="filler-text">

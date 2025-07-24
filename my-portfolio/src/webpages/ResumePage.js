@@ -1,4 +1,10 @@
+import { useEffect } from 'react';
+
 function ResumePage() {
+  useEffect(() => {
+    document.title = "Gwantana Kiboigo | Resume";
+  }, []);
+  
   return (
     <div>
       <div className="filler-text">

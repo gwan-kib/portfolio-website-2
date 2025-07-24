@@ -1,4 +1,10 @@
+import { useEffect } from 'react';
+
 function ArtCommissionsPage() {
+  useEffect(() => {
+    document.title = "Gwantana Kiboigo | Commissions";
+  }, []);
+
   return (
     <div>
       <div className="filler-text">

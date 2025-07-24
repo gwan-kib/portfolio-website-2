@@ -1,6 +1,15 @@
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export default function NavbarBehavior() {
+
+  const location = useLocation();
+
+  useEffect(() => {
+    const artMenu = document.getElementById('art-menu');
+    if (artMenu) artMenu.classList.remove('open');
+  }, [location]);
+  
   useEffect(() => {
     const navbar = document.getElementById('navbar');
     const artMenuButton = document.getElementById('art-menu-button');
@@ -9,6 +18,7 @@ export default function NavbarBehavior() {
     // cleanup array for main navbar events
     const navbarCleanup = [];
     
+    // for all main navbar events
     if (navbar) {
 
       // controls the resizing of the navbar on scroll
@@ -22,7 +32,7 @@ export default function NavbarBehavior() {
 
       window.addEventListener('scroll', handleScroll);
       
-      navbarCleanup.push(() => window.addEventListener('scroll', handleScroll));
+      navbarCleanup.push(() => window.removeEventListener('scroll', handleScroll));
     }
 
     // cleanup array for all the art button events
@@ -35,10 +45,10 @@ export default function NavbarBehavior() {
       const handleDocumentClick = (event) => {
 
         // if the art button was clicked, it toggles the dropdown menu
-        if (artMenuButton.contains(event.target) && artMenu.contains(event.target)) {
+        if (artMenuButton.contains(event.target)) {
           event.stopPropagation();
           artMenu.classList.toggle('open');
-        } else {
+        } else if (!artMenuButton.contains(event.target) && !artMenu.contains(event.target)) {
           // if the click was not on the art button or its dropdown, it will close the menu
           artMenu.classList.remove('open');
         }
