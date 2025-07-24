@@ -1,0 +1,34 @@
+#about-me-section {
+  background-color: #101010;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 80%;
+  min-height: 100vh;
+
+  padding: 4rem 2rem;
+
+    padding: 6rem 2rem 4rem 2rem; /* Top padding compensates for navbar height */
+  box-sizing: border-box;
+  margin-top: 5.5rem; /* Match your navbar height */
+}
+
+#about-me-content {
+  width: 80%;
+  max-width: 800px;
+  text-align: left;
+  color: #ffe8b5;
+}
+
+#about-me-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+#about-me-description {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  font-weight: 400;
+}
