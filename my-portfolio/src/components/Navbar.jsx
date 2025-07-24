@@ -1,8 +1,12 @@
-import { Link } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import NavbarBehavior from '../hooks/NavbarBehavior';
 
 function Navbar() {
     NavbarBehavior();
+
+    const location = useLocation();
+    const artActive = location.pathname.startsWith('/art');
+
   return (
     <div className="" id="navbar">
         <div id="navbar-leftside">
@@ -16,40 +20,42 @@ function Navbar() {
 
         <div id="navbar-middle">
             <div className="navbar-element">
-                <Link className="navbar-label" to="/">
+                   <NavLink className={({ isActive }) => `navbar-label${isActive ? ' active' : ''}`} to="/">
                     <span className="material-symbols-rounded">home</span>
                     <span className="label-text">Home</span>
-                </Link>
+                </NavLink>
             </div>
 
             <div className="navbar-element">
-                <Link className="navbar-label" to="/resume">
+                <NavLink className={({ isActive }) => `navbar-label${isActive ? ' active' : ''}`} to="/resume">
                     <span className="material-symbols-rounded">description</span>
                     <span className="label-text">Resume</span>
-                </Link>
+                </NavLink>
             </div>
 
             <div className="navbar-element">
-                <Link className="navbar-label" to="/projects">
+                <NavLink className={({ isActive }) => `navbar-label${isActive ? ' active' : ''}`} to="/projects">
                     <span className="material-symbols-rounded">dashboard</span>
                     <span className="label-text">Projects</span>
-                </Link>
+                </NavLink>
             </div>
 
             <div className="navbar-element dropdown">
                 <button className="navbar-label" id="art-menu-button">
+                    <div className={`navbar-label${artActive ? ' active' : ''}`} id="art-menu-button">
                     <span className="material-symbols-rounded">stylus_pen</span>
                     <span className="label-text">Art</span>
                     <span className="material-symbols-rounded">arrow_downward_alt</span>
+                    </div>
                 </button>
 
                 <div className="dropdown-menu" id="art-menu">
-                    <Link className="dropdown-element art-menu-item" to="/art/personal">
+                    <NavLink className={({ isActive }) => `dropdown-element art-menu-item${isActive ? ' active' : ''}`} to="/art/personal">
                         <span className="art-menu-item-text">Personal</span>
-                    </Link>
-                    <Link className="dropdown-element art-menu-item" to="/art/commissions">
+                    </NavLink>
+                    <NavLink className={({ isActive }) => `dropdown-element art-menu-item${isActive ? ' active' : ''}`} to="/art/commissions">
                         <span className="art-menu-item-text">Commissions</span>
-                    </Link>
+                    </NavLink>
                 </div>
             </div>
         </div>
