@@ -3,6 +3,7 @@ body {
     
     margin: 0;
     padding: 0;
+    padding-top: 1rem;
     
     font-family: 'Rubik Mono One', sans-serif;
 }
@@ -32,14 +33,6 @@ body {
 /*----------------------------------------------------------------------------------------------------------------*/
 
 /* FOR FILLER TEXT (TO TEST SCROLLING STUFF)*/
-
-.block {
-    height: 400px;
-    background-color: #222;
-    border: 1px solid #444;
-    margin: 1rem;
-    border-radius: 0.5rem;
-}
 
 .filler-text p {
     margin: 6rem;

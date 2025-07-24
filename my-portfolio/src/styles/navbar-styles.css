@@ -26,7 +26,7 @@
 }
 
 #navbar-leftside {
-    position: fixed;
+    position: absolute;
     left: 4rem;
     display: flex;
     align-items: center;
@@ -46,8 +46,8 @@
 }
 
 #navbar-rightside {
-    position: fixed;
-    left: 80rem; /* 85.375 - (leftside 'left') */
+    position: absolute;
+    right: 4rem; /* 85.375 - (leftside 'left') */
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -183,11 +183,14 @@ button.navbar-label.active .material-symbols-rounded {
     max-width: 0;
 }
 
-#navbar.shrink .label-text#name {
+#navbar.shrink .label-text#name,
+#navbar.shrink .label-text#contact-me {
     opacity: 1;
     visibility: visible;
     
     font-size: 1.45rem;
+
+    max-width: 100%; 
 }
 
 /*----------------------------------------------------------------------------------------------------------------*/

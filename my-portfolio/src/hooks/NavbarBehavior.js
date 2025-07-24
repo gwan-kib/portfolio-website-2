@@ -21,18 +21,48 @@ export default function NavbarBehavior() {
     // for all main navbar events
     if (navbar) {
 
+      let mouseX = 0;
+      let mouseY = 0;
+
+      const handleMouseMove = (event) => {
+        mouseX = event.clientX;
+        mouseY = event.clientY;
+      };
+
       // controls the resizing of the navbar on scroll
       const handleScroll = () => {
-        if (window.scrollY > 88) {
+        const rect = navbar.getBoundingClientRect();
+
+        const isInside = mouseX >= rect.left && mouseX <= rect.right && mouseY >= rect.top && mouseY <= rect.bottom;
+
+        if (window.scrollY > rect.bottom && !isInside) {
           navbar.classList.add('shrink');
         } else {
           navbar.classList.remove('shrink');
         }
       };
 
+      const handleDocumentMouseMove = (mouse) => {
+        const rect = navbar.getBoundingClientRect();
+        const mouseX = mouse.clientX;
+        const mouseY = mouse.clientY;
+
+        const isInside = mouseX >= rect.left && mouseX <= rect.right && mouseY >= rect.top && mouseY <= rect.bottom;
+
+        if (isInside && window.scrollY > rect.bottom) {
+          navbar.classList.remove('shrink');
+        } else if (!isInside && window.scrollY > rect.bottom) {
+          navbar.classList.add('shrink');
+        }
+      }
+      
       window.addEventListener('scroll', handleScroll);
+      window.addEventListener('mousemove', handleDocumentMouseMove);
+      window.addEventListener('mousemove', handleMouseMove);
       
       navbarCleanup.push(() => window.removeEventListener('scroll', handleScroll));
+      navbarCleanup.push(() => window.removeEventListener('mousemove', handleDocumentMouseMove));
+      navbarCleanup.push(() => window.removeEventListener('mousemove', handleMouseMove));
     }
 
     // cleanup array for all the art button events
