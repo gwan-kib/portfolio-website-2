@@ -35,7 +35,7 @@ export default function NavbarBehavior() {
 
         const isInside = mouseX >= rect.left && mouseX <= rect.right && mouseY >= rect.top && mouseY <= rect.bottom;
 
-        if (window.scrollY > rect.bottom && !isInside) {
+        if (window.scrollY > rect.bottom && !artMenu.matches(':hover') && !isInside) {
           navbar.classList.add('shrink');
         } else {
           navbar.classList.remove('shrink');
@@ -49,10 +49,10 @@ export default function NavbarBehavior() {
 
         const isInside = mouseX >= rect.left && mouseX <= rect.right && mouseY >= rect.top && mouseY <= rect.bottom;
 
-        if (isInside && window.scrollY > rect.bottom) {
-          navbar.classList.remove('shrink');
-        } else if (!isInside && window.scrollY > rect.bottom) {
+        if (window.scrollY > rect.bottom && !artMenu.matches(':hover') && !isInside) {
           navbar.classList.add('shrink');
+        } else {
+          navbar.classList.remove('shrink');
         }
       }
       
@@ -88,7 +88,7 @@ export default function NavbarBehavior() {
       const handleDocumentMouseMove = () => {
 
         // if the user moves the mouse outside of the navbar, it will shrink
-        if (navbar.classList.contains('shrink') || (!navbar.matches(':hover') && !navbar.classList.contains('shrink'))) {
+        if (navbar.classList.contains('shrink') && !artMenu.matches(':hover')) {
           artMenu.classList.remove('open');
         }
       };
@@ -96,8 +96,9 @@ export default function NavbarBehavior() {
       // when the user scroll on the page...
       const handleDocumentScroll = () => {
 
-        // the art button dropdown will close
-        artMenu.classList.remove('open');
+        if (!navbar.matches(':hover') && !artMenu.matches(':hover')) {
+          artMenu.classList.remove('open');
+        }
       };
 
       document.addEventListener('click', handleDocumentClick);
