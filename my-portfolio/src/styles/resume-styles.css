@@ -1,0 +1,44 @@
+#resume-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#resume-container {
+    margin: auto;
+    margin-top: 7rem;
+}
+
+#resume-pdf {
+    width: 60rem;
+    height: 62rem;
+}
+
+.resume-download-box {
+    width: 10rem;
+    margin-top: 2rem;
+
+    background-color: #ffd57c;
+    color: #101010;
+    font-weight: 600;
+    border-radius: .4rem;
+    cursor: pointer;
+
+    margin-bottom: 2rem;
+}
+
+#resume-download-button {
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#download-pdf-link {
+    all: unset;
+}
+
+.resume-download-box:hover {
+    color: #94825c;
+}

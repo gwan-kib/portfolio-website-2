@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet';
 import '../styles/general-styles.css';
 import '../styles/navbar-styles.css';
 import '../styles/mainpage-styles.css';
+import '../styles/resume-styles.css';
 
 function UniversalHead({ title }) {
     return (

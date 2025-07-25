@@ -4,7 +4,7 @@ function ProjectsPage() {
 
   return (
     <>
-      <UniversalHead title="Gwantana Kiboigo | Personal Art" />
+      <UniversalHead title="Gwantana Kiboigo | Projects" />
 
       <div>
         <div className="filler-text">
