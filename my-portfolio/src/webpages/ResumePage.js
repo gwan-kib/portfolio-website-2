@@ -15,7 +15,9 @@ function ResumePage() {
             </a>
           </div>
           <Worker workerUrl={`https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`}>
-              <Viewer id='resume-pdf' fileUrl="/GwantanaKiboigo_Resume.pdf" />
+          <div id='resume-pdf'>
+              <Viewer fileUrl="/GwantanaKiboigo_Resume.pdf" defaultScale={1.5}/>
+              </div>
           </Worker>
         </div>
       </div>

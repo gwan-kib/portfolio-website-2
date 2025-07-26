@@ -7,23 +7,33 @@
 #resume-container {
     margin: auto;
     margin-top: 7rem;
-    
-    width: 52rem;
+
 
     background-color: #ffffff;
 }
 
 #resume-pdf {
-    height: 62rem;
+    /* Remove fixed height to avoid internal scrollbars */
+    height: auto;
 
     background-color: transparent;
+      width: 100%;
+  max-width: 60rem;
 }
 
 .rpv-core__viewer,
 .rpv-core__viewer--light {
-    width: 40rem;
+    /* Allow the PDF viewer to size itself according to the document */
+    width: 100%;
+  max-width: 60rem;
+  
+  margin: 0 auto;
 }
 
+.rpv-core__canvas-layer canvas {
+  width: 100% !important;
+  height: auto !important;
+}
 
 .resume-download-box {
     width: fit-content;
@@ -45,8 +55,4 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.resume-download-button:hover {
-    color: #94825c;
 }
