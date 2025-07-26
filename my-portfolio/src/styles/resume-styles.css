@@ -7,15 +7,26 @@
 #resume-container {
     margin: auto;
     margin-top: 7rem;
+    
+    width: 52rem;
+
+    background-color: #ffffff;
 }
 
 #resume-pdf {
-    width: 60rem;
     height: 62rem;
+
+    background-color: transparent;
 }
 
+.rpv-core__viewer,
+.rpv-core__viewer--light {
+    width: 40rem;
+}
+
+
 .resume-download-box {
-    width: 10rem;
+    width: fit-content;
     margin-top: 2rem;
 
     background-color: #ffd57c;
@@ -28,6 +39,7 @@
 }
 
 #resume-download-button {
+    all: unset;
     text-align: center;
 
     display: flex;
@@ -35,10 +47,6 @@
     justify-content: center;
 }
 
-#download-pdf-link {
-    all: unset;
-}
-
-.resume-download-box:hover {
+.resume-download-button:hover {
     color: #94825c;
 }

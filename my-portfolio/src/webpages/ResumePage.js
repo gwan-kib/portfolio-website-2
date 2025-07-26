@@ -9,19 +9,14 @@ function ResumePage() {
       <UniversalHead title="Gwantana Kiboigo | Resume" />
       <div id='resume-page'>
         <div id="resume-container">
-          <Worker workerUrl={`https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`}>
-            <div id='resume-pdf'>
-              <Viewer fileUrl="/GwantanaKiboigo_Resume.pdf" />
-            </div>
-          </Worker>
-        </div>
-        <div className="resume-download-box">
-          <div id='resume-download-button'>
+          <div className="resume-download-box">
+            <a id='resume-download-button' href="/GwantanaKiboigo_Resume.pdf" download>
             <span className="material-symbols-rounded">download</span>
-            <a id="download-pdf-link" href="/GwantanaKiboigo_Resume.pdf" download>
-              Download PDF
             </a>
           </div>
+          <Worker workerUrl={`https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`}>
+              <Viewer id='resume-pdf' fileUrl="/GwantanaKiboigo_Resume.pdf" />
+          </Worker>
         </div>
       </div>
     </>
